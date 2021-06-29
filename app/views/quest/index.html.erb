@@ -4,7 +4,7 @@
 <div class="">
   <div class="">
     <% @quests.each do |quest| %>
-    <%= quest.content %>
+    <%= link_to(quest.content,"/quest/#{quest.id}") %>
     <% end %>
   </div>
 </div>
