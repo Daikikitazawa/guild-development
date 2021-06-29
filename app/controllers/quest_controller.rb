@@ -7,4 +7,7 @@ class QuestController < ApplicationController
     @quest = Quest.find_by(id: params[:id])
   end
 
+  def new
+  end
+
 end
