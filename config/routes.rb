@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "chat/index" => "chat#index"
 
-  get "offer/index" => "offer#index"
+  get "offers/index" => "offers#index"
 
   get "quests/index" => "quests#index"
   get "quests/new" => "quests#new"
