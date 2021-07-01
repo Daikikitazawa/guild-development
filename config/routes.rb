@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "quests/index" => "quests#index"
   get "quests/new" => "quests#new"
+  post "quests/create" => "quests#create"
 
   get "quests/:id" => "quests#show"
 

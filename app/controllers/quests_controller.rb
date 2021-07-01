@@ -1,6 +1,7 @@
 class QuestsController < ApplicationController
+  
   def index
-    @quests = Quest.all
+    @quests = Quest.all.order(created_at: :desc)
   end
 
   def show
@@ -8,6 +9,12 @@ class QuestsController < ApplicationController
   end
 
   def new
+  end
+
+  def create
+    @quest = Quest.new(content: params[:content])
+    @quest.save
+    redirect_to("/quests/index")
   end
 
 end
