@@ -5,6 +5,7 @@ Quest#show
     <div class="">
       <%= @quest.content %>
       <%= @quest.created_at %>
+      <%= link_to("編集", "/quests/#{@quest.id}/edit") %>
     </div>
   </div>
 </div>
