@@ -28,4 +28,10 @@ class QuestsController < ApplicationController
     redirect_to("/quests/index")
   end
 
+  def destroy
+    @quest = Quest.find_by(id: params[:id])
+    @quest.destroy
+    redirect_to("/quests/index")
+  end
+
 end

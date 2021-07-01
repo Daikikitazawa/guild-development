@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "quests/create" => "quests#create"
   get "quests/:id/edit" => "quests#edit"
   post "quests/:id/update" => "quests#update"
+  post "quests/:id/destroy" => "quests#destroy"
 
   get "quests/:id" => "quests#show"
 

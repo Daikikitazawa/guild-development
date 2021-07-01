@@ -6,6 +6,7 @@ Quest#show
       <%= @quest.content %>
       <%= @quest.created_at %>
       <%= link_to("編集", "/quests/#{@quest.id}/edit") %>
+      <%= link_to("削除", "/quests/#{@quest.id}/destroy", {method:"quest"}) %>
     </div>
   </div>
 </div>
