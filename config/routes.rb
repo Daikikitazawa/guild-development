@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   get "offer/index" => "offer#index"
 
-  get "quest/index" => "quest#index"
-  get "quest/new" => "quest#new"
+  get "quests/index" => "quests#index"
+  get "quests/new" => "quests#new"
 
-  get "quest/:id" => "quest#show"
+  get "quests/:id" => "quests#show"
 
 
   get "/" => "home#top"
