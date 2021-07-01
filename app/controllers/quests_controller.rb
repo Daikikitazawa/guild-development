@@ -24,8 +24,11 @@ class QuestsController < ApplicationController
   def update
     @quest = Quest.find_by(id: params[:id])
     @quest.content = params[:content]
-    @quest.save
+  if @quest.save
     redirect_to("/quests/index")
+  else
+    redirect_to("/quests/#{@quest.id}/edit")
+   end
   end
 
   def destroy
