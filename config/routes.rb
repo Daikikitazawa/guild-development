@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get "chat/index" => "chat#index"
+  get "chats/index" => "chats#index"
 
   get "offers/index" => "offers#index"
 
