@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  get "users/index" => "users#index"
 
-  get 'users/index'
+  get "users/:id" => "users#show"
+
+
   get "chats/index" => "chats#index"
 
   get "offers/index" => "offers#index"
