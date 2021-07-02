@@ -4,6 +4,9 @@ Quest#new
   <div class="">
     <div class="">投稿する</div>
     <%= form_tag("/quests/create") do %>
+    <% @quest.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>
     <textarea name="content" id="" cols="30" rows="10"></textarea>
     <input type="submit" value="投稿">
     <% end %>
