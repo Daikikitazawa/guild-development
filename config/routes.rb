@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'users/index'
   get "chats/index" => "chats#index"
 
   get "offers/index" => "offers#index"
