@@ -14,6 +14,7 @@
     <li><%= link_to("ユーザー一覧", "/users/index", class:"link") %></li>
     <li><%= link_to("クエスト作成", "/quests/new", class:"link") %></li>
     <li><%= link_to("クエスト一覧", "/quests/index", class:"link") %></li>
+    <li><%= link_to("新規登録", "/signup", class:"link") %></li>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>

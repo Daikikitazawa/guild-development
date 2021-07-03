@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get "users/index" => "users#index"
+  get "signup" => "users#new"
 
   get "users/:id" => "users#show"
 
