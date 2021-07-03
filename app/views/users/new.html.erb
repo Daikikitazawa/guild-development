@@ -3,11 +3,13 @@ Users#new
 <div class="">
   <div class="">
     <div class="">
+      <%= form_tag("/users/create") do %>
       <p>ユーザー名</p>
-      <input type="">
+      <input type="" name="name">
       <p>メールアドレス</p>
-      <input type="">
+      <input type="" name="email">
       <input type="submit" value="新規登録">
+      <% end %>
     </div>
   </div>
 </div>
