@@ -3,6 +3,7 @@ Users#show
 <div class="">
   <div class="">
     <div class="">
+      <img src="<%= "/user_images/#{@user.image_name}" %>" alt="">
       <%= @user.name %>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
 

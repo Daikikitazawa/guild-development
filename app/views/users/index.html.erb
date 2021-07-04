@@ -4,6 +4,7 @@
   <div class="">
     <div class="">ユーザー一覧</div>
     <% @users.each do |user| %>
+    <img src="<%= "/user_images/#{user.image_name}" %>" alt="">
     <%= link_to(user.name, "/users/#{user.id}") %>
     <% end %>
   </div>
