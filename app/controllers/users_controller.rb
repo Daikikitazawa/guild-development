@@ -46,6 +46,10 @@ end
 end
 
   def login_form
+    @user = User.find_by(email: params[:email], password: params[:password])
+  end
+
+  def login
   end
 
 end
