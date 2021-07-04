@@ -45,4 +45,7 @@ end
   end
 end
 
+  def login_form
+  end
+
 end
