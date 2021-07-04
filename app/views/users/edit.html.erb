@@ -5,10 +5,12 @@ User#edit
     <% @user.errors.full_messages.each do |message| %>
     <%= message %>
     <% end %>
-    <%= form_tag("/users/#{@user.id}/update") do %>
+    <%= form_tag("/users/#{@user.id}/update" , {multipart: true}) do %>
     <div class="">ユーザー情報の編集</div>
     <p>ユーザー名</p>
     <input type="" name="name" value="<%= @user.name %>">
+    <p>画像</p>
+    <input type="file" name="image">
     <p>メールアドレス</p>
     <input type="" name="email" value="<%= @user.email %>">
     <input type="submit" value="更新">
