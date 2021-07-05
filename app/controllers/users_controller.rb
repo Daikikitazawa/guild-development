@@ -63,4 +63,10 @@ end
   end
 end
 
+  def logout
+    session[:user_id] = nil
+    lash[:notice] = "ログアウトしました"
+    redirect_to("/login")
+  end
+
 end
