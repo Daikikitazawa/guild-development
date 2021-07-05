@@ -3,14 +3,14 @@ Users#Login_form
 <div class="">
   <div class="">
     <div class="">
-      <% @user.errors.full_messages.each do |message| %>
-      <%= message %>
+      <% if @error_message %>
+      <%= @error_message %>
       <% end %>
       <%= form_tag("/login") do %>
       <p>メールアドレス</p>
-      <input type="" name="email" value="<%= @user.email %>">
+      <input type="" name="email" value="<%= @email %>">
       <p>パスワード</p>
-      <input type="password" name="password" value="">
+      <input type="password" name="password" value="<%= @password %>">
       <input type="submit" value="ログイン">
       <% end %>
     </div>
