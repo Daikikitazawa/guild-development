@@ -1,4 +1,5 @@
 class QuestsController < ApplicationController
+  before_action :authenticate_user
 
   def index
     @quests = Quest.all.order(created_at: :desc)
@@ -42,6 +43,13 @@ class QuestsController < ApplicationController
     @quest.destroy
     flash[:notice] = "クエストを削除しました"
     redirect_to("/quests/index")
+  end
+
+  def authenticate_user
+    if @current_user == nil
+      flash[:notice] = "ログインが必要です"
+      redirect_to("/login")
+    end
   end
 
 end

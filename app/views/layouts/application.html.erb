@@ -12,12 +12,16 @@
 
   <body>
     <% current_user = User.find_by(id: session[:user_id]) %>
+    <% if session[:user_id] %>
+    <li><%= link_to(current_user.name, "/users/#{current_user.id}", class:"link") %></li>
     <li><%= link_to("ユーザー一覧", "/users/index", class:"link") %></li>
     <li><%= link_to("クエスト作成", "/quests/new", class:"link") %></li>
     <li><%= link_to("クエスト一覧", "/quests/index", class:"link") %></li>
+    <li><%= link_to("ログアウト", "/logout", {method: "post", class:"link"}) %></li>
+    <% else %>
     <li><%= link_to("新規登録", "/signup", class:"link") %></li>
     <li><%= link_to("ログイン", "/login", class:"link") %></li>
-    <li><%= link_to(current_user.name, "/users/#{current_user.id}", class:"link") %></li>
+    <% end %>
 
     <% if flash[:notice] %>
       <div class="flash">
