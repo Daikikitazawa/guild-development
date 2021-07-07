@@ -5,8 +5,9 @@ Users#show
     <div class="">
       <img src="<%= "/user_images/#{@user.image_name}" %>" alt="">
       <%= @user.name %>
+      <% if @user.id == @current_user.id %>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
-
+      <% end %>
     </div>
   </div>
 </div>
