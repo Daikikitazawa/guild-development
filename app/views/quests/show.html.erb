@@ -3,6 +3,8 @@ Quest#show
 <div class="">
   <div class="">
     <div class="">
+      <img src="<%= "/user_images/#{@user.image_name}" %>" alt="">
+      <%= link_to(@user.name, "/users/#{@user.id}") %>
       <%= @quest.content %>
       <%= @quest.created_at %>
       <%= link_to("編集", "/quests/#{@quest.id}/edit") %>

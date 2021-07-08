@@ -4,6 +4,8 @@
 <div class="">
   <div class="">
     <% @quests.each do |quest| %>
+    <img src="<%= "/user_images/#{quest.user.image_name}" %>" alt="">
+    <%= link_to(quest.user.name, "/users/#{quest.user.id}") %>
     <%= link_to(quest.content,"/quests/#{quest.id}") %>
     <% end %>
   </div>

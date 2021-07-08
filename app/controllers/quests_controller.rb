@@ -7,6 +7,7 @@ class QuestsController < ApplicationController
 
   def show
     @quest = Quest.find_by(id: params[:id])
+    @user = User.find_by(id: @quest.user_id)
   end
 
   def new
@@ -14,7 +15,7 @@ class QuestsController < ApplicationController
   end
 
   def create
-    @quest = Quest.new(content: params[:content])
+    @quest = Quest.new(content: params[:content], user_id: @current_user.id)
     if @quest.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/quests/index")
