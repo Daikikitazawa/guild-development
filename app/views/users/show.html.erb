@@ -9,5 +9,12 @@ Users#show
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
+    <div class="">
+       <% @user.quests.each do |quest|%>
+       <img src="<%= "/user_images/#{quest.user.image_name}" %>" alt="">
+       <%= link_to(quest.user.name, "/users/#{quest.user.id}") %>
+       <%= link_to(quest.content,"/quests/#{quest.id}") %>
+       <% end %>
+    </div>
   </div>
 </div>
