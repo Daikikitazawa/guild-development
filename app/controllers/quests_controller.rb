@@ -1,5 +1,6 @@
 class QuestsController < ApplicationController
   before_action :authenticate_user
+  before_action :ensure_currect_user, {only: [:edit, :update, :destroy]}
 
   def index
     @quests = Quest.all.order(created_at: :desc)
@@ -50,6 +51,14 @@ class QuestsController < ApplicationController
     if @current_user == nil
       flash[:notice] = "ログインが必要です"
       redirect_to("/login")
+    end
+  end
+
+  def ensure_currect_user
+    @quest = Quest.find_by(id: params[:id])
+    if @quest.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/quests/index")
     end
   end
 

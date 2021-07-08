@@ -7,8 +7,10 @@ Quest#show
       <%= link_to(@user.name, "/users/#{@user.id}") %>
       <%= @quest.content %>
       <%= @quest.created_at %>
+      <% if @quest.user_id == @current_user.id %>
       <%= link_to("編集", "/quests/#{@quest.id}/edit") %>
       <%= link_to("削除", "/quests/#{@quest.id}/destroy", {method:"quest"}) %>
+      <% end %>
     </div>
   </div>
 </div>
