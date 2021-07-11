@@ -11,6 +11,11 @@ Quest#show
       <%= link_to("編集", "/quests/#{@quest.id}/edit") %>
       <%= link_to("削除", "/quests/#{@quest.id}/destroy", {method:"quest"}) %>
       <% end %>
+      <% if Bookmark.find_by(user_id:@current_user.id, quest_id:@quest.id) %>
+      ブックマーク済み
+      <% else %>
+      <%= link_to("ブックマーク", "/bookmarks/#{@quest.id}/create", {method: "quest"}) %>
+      <% end %>
     </div>
   </div>
 </div>

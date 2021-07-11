@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post "bookmarks/:quest_id/create" => "bookmarks#create"
+
   get "users/index" => "users#index"
   get "signup" => "users#new"
   get "login" => "users#login_form"
