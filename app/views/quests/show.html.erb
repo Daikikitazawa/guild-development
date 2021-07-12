@@ -12,7 +12,7 @@ Quest#show
       <%= link_to("削除", "/quests/#{@quest.id}/destroy", {method:"quest"}) %>
       <% end %>
       <% if Bookmark.find_by(user_id:@current_user.id, quest_id:@quest.id) %>
-      ブックマーク済み
+      <%= link_to("ブックマーク済み", "/bookmarks/#{@quest.id}/destroy", {method: "quest"}) %>
       <% else %>
       <%= link_to("ブックマーク", "/bookmarks/#{@quest.id}/create", {method: "quest"}) %>
       <% end %>
