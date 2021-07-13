@@ -1,0 +1,14 @@
+users#bookmarks
+
+<div class="">
+  <div class="">
+    <div class="">
+      <% @bookmarks.each do |bookmark| %>
+      <% quest = Quest.find_by(id: bookmark.quest_id) %>
+      <img src="<%= "/user_images/#{quest.user.image_name}" %>" alt="">
+      <%= link_to(quest.user.name, "/users/#{quest.user.id}") %>
+      <%= link_to(quest.content,"/quests/#{quest.id}") %>
+      <% end %>
+    </div>
+  </div>
+</div>

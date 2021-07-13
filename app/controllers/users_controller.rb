@@ -74,10 +74,15 @@ end
   end
 
   def ensure_currect_user
-    if @current_user.id != params[:id].to_i 
+    if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to("/quests/index")
     end
+  end
+
+  def bookmarks
+    @user = User.find_by(id: params[:id])
+    @bookmarks = Bookmark.where(user_id: @user.id)
   end
 
 end

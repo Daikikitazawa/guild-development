@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   post "bookmarks/:quest_id/create" => "bookmarks#create"
   post "bookmarks/:quest_id/destroy" => "bookmarks#destroy"
+  get "users/:id/bookmarks" => "users#bookmarks"
 
   get "users/index" => "users#index"
   get "signup" => "users#new"
