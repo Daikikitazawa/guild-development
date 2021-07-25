@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   post "bookmarks/:quest_id/create" => "bookmarks#create"
   post "bookmarks/:quest_id/destroy" => "bookmarks#destroy"
   get "users/:id/bookmarks" => "users#bookmarks"

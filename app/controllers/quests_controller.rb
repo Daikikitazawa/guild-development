@@ -7,9 +7,13 @@ class QuestsController < ApplicationController
   end
 
   def show
-    @quest = Quest.find_by(id: params[:id])
+    @quest = Quest.includes(:user).find(params[:id])
     @user = User.find_by(id: @quest.user_id)
     @Bookmarks_count = Bookmark.where(quest_id: @quest.id).count
+    @comments = @quest.comments.includes(:user).all
+    if @current_user
+    @comment  = @quest.comments.build(user_id: @current_user.id)
+   end
   end
 
   def new
